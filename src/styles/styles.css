@@ -113,6 +113,19 @@ body {
   gap: var(--gap);
 }
 
+.todo-list--peek {
+  max-height: calc(4 * 54px + 3 * var(--gap) + 34px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+}
+
+.todo-list--peek::-webkit-scrollbar {
+  display: none;
+}
+
 .todo-empty {
   text-align: center;
   color: #7a7a85;
@@ -126,7 +139,7 @@ body {
   position: relative;
   border-radius: var(--card-radius);
   padding: 20px 20px 34px;
-  overflow: visible;
+  overflow: hidden;
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
