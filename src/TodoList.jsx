@@ -22,9 +22,11 @@ const TodoList = ({ todos, setTodos }) => {
       setFallingShapes((prev) => prev.filter((s) => s.uid !== uid))
    }
 
+   const isOverflowing = todos.length > 4
+
    return (
-      <div className="todo-list-wrapper">
-         <div className="todo-list">
+      <div className={`todo-list-wrapper${isOverflowing ? ' todo-list-wrapper--overflowing' : ''}`}>
+         <div className={`todo-list${isOverflowing ? ' todo-list--capped' : ''}`}>
             {todos.map((todo) => (
                <TodoItem key={todo.id} setTodos={setTodos} todos={todos} todo={todo} onDelete={handleDelete} />
             ))}

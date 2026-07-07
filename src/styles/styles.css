@@ -115,29 +115,28 @@ body {
 
 .todo-list-wrapper {
   position: relative;
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
+  flex-shrink: 0;
 }
 
 .todo-list {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
-  padding-bottom: 40px;
 }
 
-.todo-list::-webkit-scrollbar {
+.todo-list--capped {
+  max-height: calc(4 * 54px + 4 * var(--gap) + 27px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.todo-list--capped::-webkit-scrollbar {
   display: none;
 }
 
-.todo-list-wrapper::after {
+.todo-list-wrapper--overflowing::after {
   content: '';
   position: absolute;
   left: 0;
