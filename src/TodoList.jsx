@@ -24,7 +24,7 @@ const TodoList = ({ todos, setTodos }) => {
 
    return (
       <div className="todo-list-wrapper">
-         <div className={`todo-list${todos.length > 4 ? ' todo-list--peek' : ''}`}>
+         <div className="todo-list">
             {todos.map((todo) => (
                <TodoItem key={todo.id} setTodos={setTodos} todos={todos} todo={todo} onDelete={handleDelete} />
             ))}
