@@ -19,10 +19,11 @@ export default function App() {
   const [todos, setTodos] = useState( todoData )
 
   return (
-    <div>
-      < TodoInput setTodos={setTodos} todos={todos}/>
-      < TodoStats todos={todos}/>
-      < TodoList todos={todos} setTodos={setTodos} />
+    <div className="app">
+      <h1 className="app__header">TO-DO<br />LIST</h1>
+      <TodoInput setTodos={setTodos} todos={todos} />
+      <TodoStats todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   )
 }
