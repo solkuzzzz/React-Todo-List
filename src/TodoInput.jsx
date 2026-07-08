@@ -9,7 +9,7 @@ const TodoInput = ({ todos, setTodos }) => {
       const text = name.trim()
       if (!text) return
       const newId = todos.length ? Math.max(...todos.map((t) => t.id)) + 1 : 1
-      setTodos([...todos, { id: newId, text, completed: false }])
+      setTodos([{ id: newId, text, completed: false }, ...todos])
       setName('')
    }
 

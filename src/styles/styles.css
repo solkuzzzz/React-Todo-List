@@ -119,30 +119,27 @@ body {
 }
 
 .todo-list {
+  height: calc(4 * 54px + 3 * var(--gap));
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
 }
 
-.todo-list--capped {
-  max-height: calc(4 * 54px + 4 * var(--gap) + 27px);
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  padding-bottom: 4px;
-}
-
-.todo-list--capped::-webkit-scrollbar {
+.todo-list::-webkit-scrollbar {
   display: none;
 }
 
-.todo-list-wrapper--overflowing::after {
+.todo-list-wrapper::after {
   content: '';
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 46px;
+  height: 32px;
   background: linear-gradient(to bottom, transparent, var(--page-bg) 88%);
   pointer-events: none;
 }
@@ -161,6 +158,8 @@ body {
   border-radius: var(--card-radius);
   padding: 20px 20px 34px;
   overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 

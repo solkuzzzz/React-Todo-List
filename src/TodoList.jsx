@@ -1,11 +1,20 @@
 import React from 'react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TodoItem from './TodoItem';
 import { getTheme } from './todoTheme';
 
 const TodoList = ({ todos, setTodos }) => {
 
    const [fallingShapes, setFallingShapes] = useState([])
+   const listRef = useRef(null)
+   const prevLength = useRef(todos.length)
+
+   useEffect(() => {
+      if (todos.length > prevLength.current && listRef.current) {
+         listRef.current.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+      prevLength.current = todos.length
+   }, [todos])
 
    function handleDelete(todo) {
       const theme = getTheme(todo.id)
@@ -22,11 +31,9 @@ const TodoList = ({ todos, setTodos }) => {
       setFallingShapes((prev) => prev.filter((s) => s.uid !== uid))
    }
 
-   const isOverflowing = todos.length > 4
-
    return (
-      <div className={`todo-list-wrapper${isOverflowing ? ' todo-list-wrapper--overflowing' : ''}`}>
-         <div className={`todo-list${isOverflowing ? ' todo-list--capped' : ''}`}>
+      <div className="todo-list-wrapper">
+         <div className="todo-list" ref={listRef}>
             {todos.map((todo) => (
                <TodoItem key={todo.id} setTodos={setTodos} todos={todos} todo={todo} onDelete={handleDelete} />
             ))}
