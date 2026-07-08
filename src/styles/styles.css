@@ -133,17 +133,6 @@ body {
   display: none;
 }
 
-.todo-list-wrapper::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 32px;
-  background: linear-gradient(to bottom, transparent, var(--page-bg) 88%);
-  pointer-events: none;
-}
-
 .todo-empty {
   text-align: center;
   color: #7a7a85;
