@@ -289,9 +289,9 @@ body {
 .falling-shape {
   position: absolute;
   top: 0;
-  width: 30px;
-  height: 30px;
-  margin-left: -15px;
+  width: 90px;
+  height: 90px;
+  margin-left: -45px;
 }
 
 @keyframes fallDown {
@@ -300,7 +300,7 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translateY(110px) rotate(160deg);
+    transform: translateY(220px) rotate(160deg);
     opacity: 0;
   }
 }
