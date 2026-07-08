@@ -27,8 +27,7 @@ const TodoList = ({ todos, setTodos }) => {
       const uid = `${todo.id}-${Date.now()}`
       const left = Math.random() * 70 + 15
 
-      const remaining = todos.length - 1
-      const visibleCount = Math.min(remaining, VISIBLE_CARDS)
+      const visibleCount = Math.min(todos.length, VISIBLE_CARDS)
       const lastCardBottom = visibleCount > 0 ? visibleCount * CARD_HEIGHT + (visibleCount - 1) * GAP : 0
       const top = lastCardBottom - WINDOW_HEIGHT
 
