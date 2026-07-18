@@ -2,9 +2,9 @@
 
 **Live demo:** [react-todo-list-olive.vercel.app](https://react-todo-list-olive.vercel.app/)
 
-| | |
-|:---:|:---:|
-| <img src="docs/preview.png" width="220" alt="To-Do List app preview"/> | <img src="docs/preview.gif" width="220" alt="App demo"/> |
+| | | |
+|:---:|:---:|:---:|
+| <img src="docs/preview.png" width="220" alt="To-Do List app preview"/> | <img src="docs/add-todo-card.gif" width="220" alt="Add todo card"/> | <img src="docs/delete-card-item.gif" width="220" alt="Delete card item"/> |
 
 A small React + Vite to-do list app. Each task card gets a unique pastel background with a bold geometric shape peeking out of its bottom edge; deleting a task swipes it out to the left while a mini version of its shape drops down out of the list.
 
