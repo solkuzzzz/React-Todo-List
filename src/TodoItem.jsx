@@ -11,10 +11,10 @@ const TodoItem = ({ setTodos, todos, todo, onDelete }) => {
       setTodos(todos.map((t) => (todo.id === t.id ? { ...t, completed: !t.completed } : t)))
    }
 
-   function handleDeleteClick() {
+   function handleDeleteClick(e) {
       if (leaving) return
       setLeaving(true)
-      onDelete(todo)
+      onDelete(todo, e.currentTarget.closest('.todo-item'))
    }
 
    return (

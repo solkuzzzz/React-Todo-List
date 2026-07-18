@@ -281,32 +281,18 @@ body {
   }
 }
 
-/* falling mini shapes when a task is deleted */
+/* falling mini shapes when a task is deleted: fall from the list down to a pile at the bottom of the screen */
 
 .falling-shapes {
-  position: relative;
-  height: 0;
+  position: fixed;
+  inset: 0;
   overflow: visible;
+  pointer-events: none;
+  z-index: 50;
 }
 
 .falling-shape {
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  margin-left: -45px;
-}
-
-@keyframes fallDown {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(220px) rotate(160deg);
-    opacity: 0;
-  }
-}
-
-.falling-shape {
-  animation: fallDown 0.8s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+  position: fixed;
+  width: 70px;
+  height: 70px;
 }
